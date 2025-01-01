@@ -168,6 +168,7 @@ def get_llm_response_as_gen(i, question):
         total_text += chunk
         yield chunk
     st.session_state["history"][i][0].pop()
+    st.session_state["history"][i][0].append(HumanMessage(question))
 
     return total_text
 
